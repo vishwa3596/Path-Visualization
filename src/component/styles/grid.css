@@ -1,0 +1,24 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                           50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                           50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                        50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                        50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                        50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                        50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                        50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                        50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                        50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                        50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                        50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                        50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+                        50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    font-size: 0.6rem;
+}
+.grid-item{
+    border: 0.5px solid cornflowerblue;
+    padding: 4px;
+    background-color: #F5F5F5;
+}
