@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Grid from "./component/Grid";
+import Path from "./component/pathfinder/pathfinder"
 import * as serviceWorker from './serviceWorker';
 class Jsx extends React.Component{
     render(){
         return(
             <div>
-                <Grid/>
+                <Path/>
             </div>
         )
 
