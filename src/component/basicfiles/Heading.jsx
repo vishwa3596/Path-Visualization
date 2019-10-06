@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Selectalgo from "./selectalgo";
 class Heading extends Component {
-    render() {
+    render(){
         return (
-            <div className="heading">
+            <div className="header">
                 <h2>PATH VISUALIZER</h2>
                 <Selectalgo/>
             </div>
