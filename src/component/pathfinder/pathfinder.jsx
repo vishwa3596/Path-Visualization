@@ -26,15 +26,13 @@ class pathfinder extends Component {
         console.log("the grid is", grid);
         if(grid.length > 0){
             return (
-                <div>
                     <div className="grid">
                         {grid.map((row, rowId) => {
-                            return <div key={Math.random(rowId*100)}>
-                                {row.map((node, nodeId) => <Node key={rowId}/>)}
+                            return <div>
+                                {row.map((node, nodeId) => <Node></Node>)}
                             </div>
                         })}
-                    </div>
-                </div>
+                    </div>               
             );
         }
         else {
