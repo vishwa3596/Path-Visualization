@@ -5,11 +5,11 @@
  */
 
 export function Visualize_Dijkstra_Algorithm(grid, startNode, destinationNode){
-    if(startNode === destinationNode) return;
     // creating an array of visited nodes in order to store the node that are visited and then we can backtrack the nodes which gives us
     // sort path.
     const visitedNodes = [];
     startNode.distance = 0;
+    console.log("start Node", startNode);
     // getting all the non visited nodes in the grid.
     const unvisitedNodes = get_all_nodes(grid);
     while(!!unvisitedNodes.length){
@@ -20,12 +20,13 @@ export function Visualize_Dijkstra_Algorithm(grid, startNode, destinationNode){
         if(startNode === destinationNode) return visitedNodes;
         Explore_Nodes(currentNode, grid);
     }
+    return visitedNodes;
 }
 
 function Explore_Nodes(node, grid){
     const unvisitedNodes = getneighbour(node, grid);
     if(unvisitedNodes.length > 0){
-        for(const nodes in unvisitedNodes){
+        for(const nodes of unvisitedNodes){
             nodes.distance = node.distance + 1;
             nodes.previous_node = node;
         }
@@ -49,9 +50,9 @@ function Sort_Nodes(unvisitedNodes){
 
 function get_all_nodes(grid){
     const Nodes = [];
-    for(var row in grid){
-        for(var nodes in row){
-            Nodes.push(nodes);
+    for(var row of grid){
+        for(var node of row){
+            Nodes.push(node);
         }
     }
     return Nodes;
@@ -61,8 +62,9 @@ export function animate_Node(finishedNode){
     const ShortestPathNodes = [];
     let currentNode = finishedNode;
     while(currentNode !== null){
+        console.log("animate_node", currentNode)
         ShortestPathNodes.unshift(currentNode);
-        currentNode = currentNode.previous_node;
+        currentNode = currentNode.previousNode;
     }
     return ShortestPathNodes;
 }

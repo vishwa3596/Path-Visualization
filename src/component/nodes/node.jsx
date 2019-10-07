@@ -17,17 +17,20 @@ class Node extends Component {
         };
     }
     render() {
-        const {isStart, isFinish} = this.props;
-        console.log("the value of is_start is " , isStart);
-        console.log("the value of isFinish is ", isFinish);
+        const {
+            col, row, isStart, isFinish
+            } = this.props;
         var clsName = isFinish? 'is-Finish': isStart? 'is-Start': '';// way to dynamically change the value of the class name so that we
         return (                                                    // can change the attributes related to the class components.
-               <div className={`node ${clsName}`}></div> 
+               <div
+               id = {`node-${row}-${col}`} 
+               className={`node ${clsName}`}>
+               </div> 
         );
     }
 }
 export const DEFAULT_NODE = {
-    c: 0,
+    col: 0,
     row: 0
 };
 
