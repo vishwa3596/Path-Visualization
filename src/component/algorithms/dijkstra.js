@@ -58,13 +58,14 @@ function get_all_nodes(grid){
     return Nodes;
 }
 
-export function animate_Node(finishedNode){
+export function animate_Node(destinationNode){
     const ShortestPathNodes = [];
-    let currentNode = finishedNode;
+    let currentNode = destinationNode;
     while(currentNode !== null){
         console.log("animate_node", currentNode)
         ShortestPathNodes.unshift(currentNode);
         currentNode = currentNode.previousNode;
     }
+    console.log("in dijkstra", ShortestPathNodes);
     return ShortestPathNodes;
 }
