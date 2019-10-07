@@ -1,33 +1,39 @@
 import React, { Component } from 'react';
 import Node from "../nodes/node";
-import "./pathfinder.css"
+import "./pathfinder.css";
+import {Visualize_Dijkstra_Algorithm, animate_Node} from "../algorithms/dijkstra";
+
+const START_NODE_ROW = 5;
+const START_NODE_COL = 5;
+const END_NODE_ROW = 10;
+const END_NODE_COL = 40;
+
+
 class pathfinder extends Component {
     constructor(props){
         super(props);
         this.state = {
             grid:[],
         };
+        this.visualizeDijkstra = this.visualizeDijkstra.bind(this);
+        this.animateDijkstra = this.animateDijkstra.bind(this);
     }
-    componentDidMount(){
-        const nodes = [];
-        for(var row = 0; row<15; row++){
-            const initial_row = []; // what i am doing is that i am trying to push each node into the current row i am dealing with.
-            for(var c=0; c<50; c++){
-               const currentNode = { // here i have defined all the core properties of the nodes like the rows and the column and if 
-                // we have a starting point then the position of the starting node and the ending node.
-                   c,
-                   row,
-                   isStart: row === 5 && c === 5,
-                   isFinish: row === 10 && c === 40,
-               };
-               initial_row.push(currentNode);
-            }
-            nodes.push(initial_row);
-        }
-        this.setState({
-            grid: nodes
-        })
+    componentDidMount(){    
+        const grid = getGrid();
+        this.setState({grid});
     }
+    animateDijkstra(visitedNodes, ShortestPathNodes){
+
+    }
+    visualizeDijkstra(startNode, destinationNode){
+        startNode = this.state.grid[START_NODE_ROW][START_NODE_COL];
+        destinationNode = this.state.grid[END_NODE_ROW][END_NODE_COL];
+        const visitedNodes = Visualize_Dijkstra_Algorithm(this.state.grid, startNode, destinationNode);
+        const ShortestPathNodes = animate_Node(destinationNode);
+        this.animateDijkstra(visitedNodes, ShortestPathNodes);
+    }
+
+
     render() {
         const {grid} = this.state;
         console.log("the grid is", grid);
@@ -60,5 +66,35 @@ class pathfinder extends Component {
         
     }
 }
+
+
+const getGrid = () => {
+    const grid = [];
+    for (let row = 0; row < 20; row++) {
+      const currentRow = [];
+      for (let col = 0; col < 50; col++) {
+        currentRow.push(createNode(col, row));
+      }
+      grid.push(currentRow);
+    }
+    return grid;
+  };
+  
+  const createNode = (col, row) => {
+    return {
+      col,
+      row,
+      isStart: row === START_NODE_ROW && col === START_NODE_COL,
+      isFinish: row === END_NODE_ROW && col === END_NODE_COL,
+      distance: Infinity,
+      isVisited: false,
+      isWall: false,
+      previousNode: null,
+    };
+  };
+
+
+
+
 
 export default pathfinder;
