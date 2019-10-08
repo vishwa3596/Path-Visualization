@@ -18,13 +18,18 @@ class Node extends Component {
     }
     render() {
         const {
-            col, row, isStart, isFinish
+            col, row, isStart, isFinish, isWall, onMouseDown, onMouseUp, onMouseEnter
             } = this.props;
-        var clsName = isFinish? 'is-Finish': isStart? 'is-Start': '';// way to dynamically change the value of the class name so that we
+        var clsName = isFinish? 'is-Finish': isStart? 'is-Start':isWall? 'is-wall':'';// way to dynamically change the value of the class name so that we
         return (                                                    // can change the attributes related to the class components.
                <div
                id = {`node-${row}-${col}`} 
-               className={`node ${clsName}`}>
+               className={`node ${clsName}`}
+               onMouseDown = {() => onMouseDown(row,col)}
+               onMouseEnter = {() => onMouseEnter(row,col)}
+               onMouseUp = {() => onMouseUp()}
+               
+               >
                </div> 
         );
     }

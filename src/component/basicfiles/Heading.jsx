@@ -4,6 +4,7 @@ class Heading extends Component {
     // adding toogle and the information page along with about us and a demo video.
     render(){
         return (
+            <div className="container">
             <div className="header">
                 <h2>PATH VISUALIZER</h2>
                 <select>
@@ -14,6 +15,7 @@ class Heading extends Component {
                         <option value="a*">A*</option>
                 </select>
                 <button>visualize algorithm</button>
+            </div>
             </div>
         );
     }

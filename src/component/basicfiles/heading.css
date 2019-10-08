@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-.header{
+.container{
     position: relative;
     display: flex;
-    margin: 1rem;
-    padding: 1rem;
+    height: 100px;
+    width: 960px;
+    background-color: antiquewhite;
 }
-.header h2{
-    font-size: 1.2rem;
+.container h2{
+    font-size: 1rem;
+    padding: 5px;
     color:#D035FF;
 }
-.header select{
+.container select{
     margin: 10px;
 }

@@ -4,6 +4,9 @@
     outline: 0.5px solid #afd8f8;
     display: inline-block;
   }
+  .is-wall {
+    background-color: rgb(12, 53, 71);
+  }
 .node.is-Finish{
     background-image: url(../img/circle.svg);
     background-size: 1.2rem 1.2rem;
