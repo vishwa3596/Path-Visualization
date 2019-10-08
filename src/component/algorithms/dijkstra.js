@@ -24,22 +24,21 @@ export function Visualize_Dijkstra_Algorithm(grid, startNode, destinationNode){
 }
 
 function Explore_Nodes(node, grid){
-    const unvisitedNodes = getneighbour(node, grid);
+    const unvisitedNodes = GetNeighbours(node, grid);
         for(const nodes of unvisitedNodes){
             nodes.distance = node.distance + 1;
             nodes.previousNode = node;
     }
 }
 
-function getneighbour(node, grid){
+export function GetNeighbours(node, grid){
     const unvisited = [];
     const {col, row} = node;
     if(row > 0) unvisited.push(grid[row-1][col]);
     if(row < grid.length-1) unvisited.push(grid[row+1][col]);
     if(col > 0) unvisited.push(grid[row][col-1]);
     if(col < grid[0].length-1) unvisited.push(grid[row][col+1]);
-    return unvisited.filter(n => !n.isVisited);
-    
+    return unvisited.filter(n => !n.isVisited);  
 }
 
 function Sort_Nodes(unvisitedNodes){
