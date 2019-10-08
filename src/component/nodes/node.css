@@ -1,14 +1,16 @@
 .node {
-    width: 1rem;
-    height: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
     outline: 0.5px solid #afd8f8;
     display: inline-block;
   }
 .node.is-Finish{
     background-image: url(../img/circle.svg);
+    background-size: 1.2rem 1.2rem;
 }
 .node.is-Start {
     background-image: url(../img/triangletwo-right.svg);
+    background-size: 1.2rem 1.2rem;
 }
 .node-visited {
     animation-name: visitedAnimation;
@@ -57,6 +59,7 @@
       transform: scale(0.6);
       background-color: rgba(255, 254, 106, 0.5);
       background-image: url(../img/triangletwo-right.svg);
+      background-size: 1.2rem 1.2rem;
     }
   
     50% {

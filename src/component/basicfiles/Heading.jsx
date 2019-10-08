@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Selectalgo from "./selectalgo";
+import "./heading.css";
 class Heading extends Component {
     // adding toogle and the information page along with about us and a demo video.
     render(){
