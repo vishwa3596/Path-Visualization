@@ -25,11 +25,9 @@ export function Visualize_Dijkstra_Algorithm(grid, startNode, destinationNode){
 
 function Explore_Nodes(node, grid){
     const unvisitedNodes = getneighbour(node, grid);
-    if(unvisitedNodes.length > 0){
         for(const nodes of unvisitedNodes){
             nodes.distance = node.distance + 1;
-            nodes.previous_node = node;
-        }
+            nodes.previousNode = node;
     }
 }
 
@@ -40,8 +38,8 @@ function getneighbour(node, grid){
     if(row < grid.length-1) unvisited.push(grid[row+1][col]);
     if(col > 0) unvisited.push(grid[row][col-1]);
     if(col < grid[0].length-1) unvisited.push(grid[row][col+1]);
-    unvisited.filter(n => !n.isVisited);
-    return unvisited;
+    return unvisited.filter(n => !n.isVisited);
+    
 }
 
 function Sort_Nodes(unvisitedNodes){
@@ -65,6 +63,7 @@ export function animate_Node(destinationNode){
         console.log("animate_node", currentNode)
         ShortestPathNodes.unshift(currentNode);
         currentNode = currentNode.previousNode;
+        console.log("in js ", currentNode);
     }
     console.log("in dijkstra", ShortestPathNodes);
     return ShortestPathNodes;

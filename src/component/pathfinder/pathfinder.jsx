@@ -39,6 +39,7 @@ class pathfinder extends Component {
         }
     }
     animateShortestPath(ShortestPathNodes){
+        console.log("entering the animate shortest path", ShortestPathNodes);
         if(ShortestPathNodes.length > 0){
             for(var i=0; i<ShortestPathNodes.length; i++){
                 let node = ShortestPathNodes[i];
@@ -57,6 +58,7 @@ class pathfinder extends Component {
         const destinationNode = this.state.grid[END_NODE_ROW][END_NODE_COL];
         const visitedNodes = Visualize_Dijkstra_Algorithm(this.state.grid, startNode, destinationNode);
         const ShortestPathNodes = animate_Node(destinationNode);
+        console.log("shortest path in the visualizeDijkstra", ShortestPathNodes);
         this.animateDijkstra(visitedNodes, ShortestPathNodes);
     }
 
