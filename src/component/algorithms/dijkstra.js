@@ -15,7 +15,9 @@ export function Visualize_Dijkstra_Algorithm(grid, startNode, destinationNode){
     while(!!unvisitedNodes.length){
         Sort_Nodes(unvisitedNodes);
         const currentNode = unvisitedNodes.shift();
+        // if current node is a wall do not explore it.
         if(currentNode.isWall) continue;
+        // the 
         if(currentNode.distance === Infinity) return visitedNodes;
         currentNode.isVisited = true;
         visitedNodes.push(currentNode);
