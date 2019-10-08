@@ -17,7 +17,7 @@ export function Visualize_Dijkstra_Algorithm(grid, startNode, destinationNode){
         const currentNode = unvisitedNodes.shift();
         currentNode.isVisited = true;
         visitedNodes.push(currentNode);
-        if(startNode === destinationNode) return visitedNodes;
+        if(currentNode === destinationNode) return visitedNodes;
         Explore_Nodes(currentNode, grid);
     }
     return visitedNodes;
@@ -67,3 +67,7 @@ export function animate_Node(destinationNode){
     console.log("in dijkstra", ShortestPathNodes);
     return ShortestPathNodes;
 }
+
+
+
+

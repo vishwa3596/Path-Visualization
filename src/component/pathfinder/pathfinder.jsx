@@ -3,8 +3,8 @@ import Node from "../nodes/node";
 import "./pathfinder.css";
 import {Visualize_Dijkstra_Algorithm, animate_Node} from "../algorithms/dijkstra";
 
-const START_NODE_ROW = 10;
-const START_NODE_COL = 5;
+const START_NODE_ROW = 5;
+const START_NODE_COL = 25;
 const END_NODE_ROW = 10;
 const END_NODE_COL = 40;
 
