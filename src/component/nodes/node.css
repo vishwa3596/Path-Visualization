@@ -28,17 +28,17 @@
     }
   
     50% {
-      background-color: rgba(17, 104, 217, 0.75);
+      background-color: rgba(0, 250, 154, 0.60);
     }
   
     75% {
       transform: scale(1.2);
-      background-color: rgba(0, 217, 159, 0.75);
+      background-color: rgba(0, 255, 127, 0.80);
     }
   
     100% {
       transform: scale(1);
-      background-color: rgba(0, 190, 218, 0.75);
+      background-color: rgba(0, 255, 255, 0.75);
     }
   }
   .node-shortest-path {
